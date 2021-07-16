@@ -1,1 +1,1 @@
-# KG12-Desafio3-Equio2
+# KG12-Desafio3JS-Equio2
