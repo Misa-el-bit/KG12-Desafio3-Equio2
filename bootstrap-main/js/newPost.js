@@ -79,7 +79,7 @@ $("#publish-post").click(() => {
     let textPost = $("#post-text").val()
     var text = $("#editor .ql-editor").html();
     let textDetail = text
-
+    //agregar user al objeto
     let postObject = {coverImage, postTitle, postHash, secondImage, textPost, textDetail}
 
     savePost(postObject)

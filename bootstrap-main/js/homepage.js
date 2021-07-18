@@ -1,5 +1,33 @@
 const database = firebase.database()
 
+const randomUsers = [
+    {
+        "github_username" : "cassidoo",
+        "name" : "Cassidy Williams",
+        "profile_image" : "https://res.cloudinary.com/practicaldev/image/fetch/s--X6yB_pWq--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/6401/db5b0ab6-93a1-4168-9f97-af8d363c1153.png",
+        "profile_image_90" : "https://res.cloudinary.com/practicaldev/image/fetch/s--P4HnHvGk--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/6401/db5b0ab6-93a1-4168-9f97-af8d363c1153.png",
+        "twitter_username" : "cassidoo",
+        "username" : "cassidoo",
+        "website_url" : "http://cassidoo.co"
+      },
+      {
+        "github_username" : "cassidoo",
+        "name" : "Cassidy Williams",
+        "profile_image" : "https://res.cloudinary.com/practicaldev/image/fetch/s--X6yB_pWq--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/6401/db5b0ab6-93a1-4168-9f97-af8d363c1153.png",
+        "profile_image_90" : "https://res.cloudinary.com/practicaldev/image/fetch/s--P4HnHvGk--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/6401/db5b0ab6-93a1-4168-9f97-af8d363c1153.png",
+        "twitter_username" : "cassidoo",
+        "username" : "cassidoo",
+        "website_url" : "http://cassidoo.co"
+      },
+
+  
+]
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+var user = randomUsers[getRandomInt(randomUsers.length)]
+
 database.ref("/articles").on("value",snapshot=>{
     const articles = snapshot.val()
     console.log(articles)
