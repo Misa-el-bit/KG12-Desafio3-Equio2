@@ -13,6 +13,7 @@
 		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
 		crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/comments.css">
 </head>
 
 <body>
@@ -512,20 +513,95 @@
 								React-Redux.
 							</p>
 						</div>
-						<div class="d-none">
-							<h4 class="font-weight-bold">Discussions (1)</h4>
-							<div>
-								<img class="img-discussion" src="images/pics/sick.jpg"
-									alt="xochitl">
-								<textarea name="" id="" cols="50" rows="10"
-									placeholder="Add to the discussion."></textarea>
-							</div>
 
+						<hr>
 
-							<div>
-								<img class="img-discussion" src="images/pics/karen.jpeg"
-									alt="karen">
+						 <div class="comment-container">
+							<div class="d-flex justify-content-between align-items-center">
+							<h4 class="text-left my-5 fs-1 font-weight-bold">Discussion (0)</h4>
+							<button class="btn btn-light shadow-full_025">Subscribe</button>
+						  </div>
+
+						  <form id="comment-form">
+							<div class="form-group d-flex align-items-start">
+							  <label for="exampleFormControlTextarea1"></label>
+							  <img src="images/pics/sick.jpg" class="rounded-circle mr-2 img-discussion" alt="xochitl"/>
+							  <div class="w-100">
+							  <textarea class="form-control" id="comment" rows="3" type="text" placeholder="Add to the discussion" name="contenido"></textarea>
+							  <div class="d-flex align-items-center">
+								<button class="btn crayons-btn" type="button">Upload image
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" role="img" class="crayons-icon">
+									<path d="M20 5H4v14l9.292-9.294a1 1 0 011.414 0L20 15.01V5zM2 3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V3.993zM8 11a2 2 0 110-4 2 2 0 010 4z"></path>
+								</svg>
+								</button>
+								<button class ="btn crayons-btn" type="button">Templates
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" role="img" class="crayons-icon">
+										<path d="M3 18.5V5a3 3 0 013-3h14a1 1 0 011 1v18a1 1 0 01-1 1H6.5A3.5 3.5 0 013 18.5zM19 20v-3H6.5a1.5 1.5 0 100 3H19zM10 4H6a1 1 0 00-1 1v10.337A3.485 3.485 0 016.5 15H19V4h-2v8l-3.5-2-3.5 2V4z"></path>
+									</svg>
+								</button>
+								<a href="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-labelledby="a1h5rtgvyeidyhdvehkpbzhdmpjlobug" class="crayons-icon"><title id="a1h5rtgvyeidyhdvehkpbzhdmpjlobug">Editor guide</title>
+										<path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"></path>
+									</svg>
+								</a>
+							  </div>
+							  <div class="d-flex">
+								<button class="btn btn-primary d-none d-md-flex" type="button" id="create-comment">Submit</button>
+								<button class="btn crayons-btn d-md-flex save" type="button">Preview</button>
+							  </div>
 							</div>
+							</div>
+						  </form>
+                                <!--Comment-->
+						  <div class="user_info_and_things d-flex align-items-start mt-3">
+							<img src="" class="rounded-circle mr-1" alt="" />
+							<div class="">
+							  <div class="p-2 shadow-full_01">
+								<span class="d-flex justify-content-between align-items-center">
+								  <span>
+									<span> User Name </span>
+									<span> • Jul 16 </span>
+								  </span>
+								  <span class="dropdown">
+									<button class="btn dropdown-toggle font-weight-bold lh--" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</button>
+									<span class="dropdown-menu dropdown-menu-right devto-style" aria-labelledby="dropdownMenuButton">
+									  <a class="dropdown-item" href="#">Copy Link</a>
+									  <a class="dropdown-item" href="#">Report Abuse</a>
+									</span>
+								  </span>
+								</span>
+								<p>
+								Some
+							    </p>
+							</div>
+							  <div class="d-flex my-2 reaction-buttons-PE-SP">
+								<a href="#" class="btn fs-3 d-inline">
+								  <!-- Icon Heart -->
+								  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="aoqxokippqaxwqyosgslhpdvn95soxj8">
+									<title id="aoqxokippqaxwqyosgslhpdvn95soxj8">Reactions</title>
+									<path
+									  d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12
+									17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"
+									></path>
+								  </svg>
+								  <span>4<span id="like" onclick="getLikes()" class="d-none d-lg-inline"> like</span></span>
+								</a>
+								<a href="#" class="btn fs-3 ml-0 d-inline">
+								  <!-- Icon Comments -->
+								  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img" aria-labelledby="a52pxqxbfhft3e5b0s0gkc7i7rv3dzb">
+									<title id="a52pxqxbfhft3e5b0s0gkc7i7rv3dzb">Comments</title>
+									<path
+									  d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12
+									15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0
+									2.707 1.846 4.475 6 6.36V15.5z"
+									></path>
+								  </svg>
+								  <span><span class="d-none d-lg-inline">Reply</span></span>
+								</a>
+							  </div>
+							  <div class="text-center text-muted my-3"><a class="text-muted" href="/">Code of Conduct</a> • <a class="text-muted" href="/">Report abuse</a></div>
+							</div>
+						  </div>
 						</div>
 					</div>
 				</div>
@@ -723,6 +799,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
 		crossorigin="anonymous"></script>
+	<script src="js/comment.js"> </script>	
 </body>
 
 </html>
