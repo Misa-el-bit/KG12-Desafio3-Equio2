@@ -1006,16 +1006,18 @@ span {
   }
 }
 
-.post-nav {
-  background-color: #eef0f1;
+/*git
+// card main form, posting page
+.post-nav{
+    background-color: $light-gray;
 }
 
-.card-body {
-  height: 900px;
-}
 
-.card-body textarea {
-  background: transparent;
-  font-weight: bolder;
-}
+.card-body{
+    height: 900px;
+    textarea{
+        background: transparent;
+        font-weight: bolder;
+    }
+}*/
 /*# sourceMappingURL=style.css.map */
