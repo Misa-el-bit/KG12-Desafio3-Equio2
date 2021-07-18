@@ -901,3 +901,17 @@ span{
         }
     }
 }
+
+// card main form, posting page
+.post-nav{
+    background-color: $light-gray;
+}
+
+
+.card-body{
+    height: 900px;
+    textarea{
+        background: transparent;
+        font-weight: bolder;
+    }
+}
