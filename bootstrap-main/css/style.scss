@@ -903,15 +903,73 @@ span{
 }
 
 // card main form, posting page
+.main-nav{
+
+background-color: $light-gray;
+
 .post-nav{
     background-color: $light-gray;
 }
-
+}
 
 .card-body{
     height: 900px;
     textarea{
         background: transparent;
-        font-weight: bolder;
+        
     }
 }
+
+.buttons-close{
+    width: 50%;
+    justify-content: space-between;
+.nav-buttons-wrapper{
+    ul{
+        li{
+            list-style: none;
+            &:hover{
+                background-color: lavender;
+                border-radius: 5px;
+                }
+                button{
+                    &:hover{
+                        color: $hover-tabs-color;
+                    }
+                }
+        }
+    }
+}
+}
+
+.btn-publish{
+    height: 40px;
+    width: 94px;
+    white-space: nowrap;
+    font-weight: 600;
+    border: none;
+    background-color: $main-blue;
+    color: white;
+    &:hover{
+        background-color: darken($main-blue,5%);
+        color: white;
+    }
+}
+
+.btn-save{
+    height: 40px;
+    width: 94px;
+    margin-left: .3rem;
+    margin-right: .3rem;
+    white-space: nowrap;
+    font-weight: 600;
+    border: none;
+    background-color: #b5bdc4;
+    color: black;
+    opacity: 0.8;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+
+
