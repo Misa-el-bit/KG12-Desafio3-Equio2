@@ -1006,13 +1006,79 @@ span {
   }
 }
 
+<<<<<<< HEAD
+.main-nav {
+  background-color: #eef0f1;
+}
+
+.main-nav .post-nav {
+  background-color: #eef0f1;
+=======
 /*git
 // card main form, posting page
 .post-nav{
     background-color: $light-gray;
+>>>>>>> f47d9319d6a86b24c02e9f9923f9ca74fd7932c2
 }
 
 
+<<<<<<< HEAD
+.card-body textarea {
+  background: transparent;
+}
+
+.buttons-close {
+  width: 50%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.buttons-close .nav-buttons-wrapper ul li {
+  list-style: none;
+}
+
+.buttons-close .nav-buttons-wrapper ul li:hover {
+  background-color: lavender;
+  border-radius: 5px;
+}
+
+.buttons-close .nav-buttons-wrapper ul li button:hover {
+  color: #3b49df;
+}
+
+.btn-publish {
+  height: 40px;
+  width: 94px;
+  white-space: nowrap;
+  font-weight: 600;
+  border: none;
+  background-color: #323ebe;
+  color: white;
+}
+
+.btn-publish:hover {
+  background-color: #2d37aa;
+  color: white;
+}
+
+.btn-save {
+  height: 40px;
+  width: 94px;
+  margin-left: .3rem;
+  margin-right: .3rem;
+  white-space: nowrap;
+  font-weight: 600;
+  border: none;
+  background-color: #b5bdc4;
+  color: black;
+  opacity: 0.8;
+}
+
+.btn-save:hover {
+  opacity: 1;
+}
+=======
 .card-body{
     height: 900px;
     textarea{
@@ -1020,4 +1086,5 @@ span {
         font-weight: bolder;
     }
 }*/
+>>>>>>> f47d9319d6a86b24c02e9f9923f9ca74fd7932c2
 /*# sourceMappingURL=style.css.map */

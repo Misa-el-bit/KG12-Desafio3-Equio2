@@ -1,13 +1,21 @@
 let articleId = -1
- firebase.database().ref("/articles")
+let database = firebase.database()
+
+// let postRef = database.ref(")
+
+let articleRef = database.ref("/articles")
+
+articleRef
  .orderByChild("dateAdded")
  .limitToLast(1)
- .on("child_added", (snapshot) =>{
+ .on("child_added", snapshot =>{
      console.log(snapshot.key)
      articleId = snapshot.key
      let value = snapshot.val()
      $("#container").html(value.textDetail)
  })
+
+
 
     const savePost = postData => {
         
@@ -72,14 +80,14 @@ $(".container-xl").append(postHtml)
  
 $("#publish-post").click(() => {
 
-    let coverImage = $("#cover-image").val()
-    let postTitle = $("#post-title").val()
-    let postHash = $("#post-hash").val()
-    let secondImage = $("#second-image").val()
-    let textPost = $("#post-text").val()
+    let cover_image = $("#cover-image").val()
+    let title = $("#post-title").val()
+    let tags = $("#post-hash").val()
+    let social_image = $("#second-image").val()
+    let description = $("#post-text").val()
     var text = $("#editor .ql-editor").html();
     let textDetail = text
-    //agregar user al objeto
+    //agregar user al objeto, sacar codigo de ejemplo del homepage.
     let postObject = {coverImage, postTitle, postHash, secondImage, textPost, textDetail}
 
     savePost(postObject)

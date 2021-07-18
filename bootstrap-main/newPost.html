@@ -36,17 +36,26 @@
                              <H5>Create Post</H5>
 						</div>
 
-						<div class="navbar-right d-flex  align-items-center">
-							<div class="nav nav-tabs" id="nav-tab" role="tablist">
-								<a class="nav-link active" id="nav-feed-tab" data-toggle="tab" href="#nav-feed"
-									role="tab" aria-controls="nav-feed" aria-selected="true">Edit</a>
-								<a class="nav-link" id="nav-week-tab" data-toggle="tab" href="#nav-week"
-									role="tab" aria-controls="nav-week" aria-selected="false">Preview</a>
-
+						<div class="buttons-close d-flex">
+							<nav class="nav-buttons-wrapper">
+								<ul class="d-flex">
+									<li>
+										<button type="button" class="btn">Edit</button>
+									</li>
+									<li>
+										<button type="button" class="btn" >Preview</button>
+									</li>
+								</ul>
+							</nav>
+							<div class="close-editor-wrapper">
+								<button type="button" class="btn">
+									<svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="as1mn15llu5e032u2pgzlc6yhvss2myk">
+										<title id="as1mn15llu5e032u2pgzlc6yhvss2myk">Close the editor</title>
+										<path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z"></path>
+									</svg>
+								</button>
 							</div>
-
 						</div>
-						<button type="button" class="btn btn-light">X</button>
 					</nav>
 				</div>		
 
@@ -58,11 +67,11 @@
 	 <div class="row p-5">
 		<div class="card col-12 col-md-8 col-xl-8" >
 			<form class="card-body mr-5 d-flex flex-column align-items-start" id="postForm">
-				<button type="button" class="formPost btn btn-light" id="cover-image" >Add a cover image</button>
-				<input type="text" class="formPost" id="post-title" placeholder="New post title here...">
-				<input type="text" class="formPost m-2" id="post-hash" placeholder="Add up to tags...">
-			    <button class="formPost m-2" id="second-image" >Upload image</button>
-				<textarea name="" class="formPost" id="post-text" cols="30" rows="10"  placeholder="Write your post here"></textarea>
+				<button type="button" class="formPost btn btn-light " id="cover-image" >Add a cover image</button>
+				<input type="text" class="formPost w-100 border-0" id="post-title" placeholder="New post title here...">
+				<input type="text" class="formPost w-100 border-0" id="post-hash" placeholder="Add up to tags...">
+			    <button type="button" class="formPost btn btn-light " id="second-image" >Upload image</button>
+				<textarea name="" class="formPost w-100 h-100 border-0" id="post-text"   placeholder="Write your post content here..."></textarea>
 				<div class="w-100">
 				<div id="editor">
 					<p>Hello World!</p>
@@ -85,8 +94,8 @@
 	</section>
 
 	<div class="col-12 ml-5 ">
-		<button type="button" class="btn btn-primary" id="publish-post">Publish</button>
-		<button type="button" class="btn btn-secondary">Save draft</button>
+		<a href="index.html"><button type="button" class="btn btn-publish" id="publish-post">Publish</button></a>
+		<button type="button" class="btn btn-save">Save draft</button>
 		<svg width="24" class="crayons-icon" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="75abcb76478519ca4eb9"><title id="75abcb76478519ca4eb9">Post options</title><path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"></path></svg>
 		<button type="button" class="btn btn-light">Revert new changes</button>
 
