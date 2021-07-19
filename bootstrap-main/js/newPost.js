@@ -141,21 +141,6 @@ $("#editor").click(()=>{
 })
 
    /*
-    const getLatestPost = getData => {
-        $.ajax({
-            method:"GET",
-            url:"https://kodemia-12g-firestore-default-rtdb.firebaseio.com/articles/articles.json",
-           // data: JSON.stringify(postData),
-            success: response => {
-                console.log( response )
-            },
-            error: error => {
-                console.log( "hay un error ")
-                console.log( error )
-            },
-            async:false
-        })
-    } 
 
 const printPost = (postData) =>{
 
