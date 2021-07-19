@@ -21,7 +21,7 @@ database.ref("/articles").on("value",snapshot=>{
 
 
 const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
-    let {comments_count=0, cover_image="", description="", published_at="" ,devToId = -1 || id ,tag_list=[] ,tags="" ,title="" ,user={} } = article
+    let {comments_count=0, cover_image="", description="", published_at="" ,devToId = article.id ,tag_list=[] ,tags="" ,title="" ,user={} } = article
     let articleTemplate = `
     <div class="card br-post post-card featured-post-card mb-3">
         ${displayFeaturedImage ? `<img src="${cover_image}" class="card-img-top" alt="...">`:''}
