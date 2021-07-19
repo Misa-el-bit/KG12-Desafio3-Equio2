@@ -117,7 +117,6 @@ $("#publish-post").click(() => {
 })
 
 
-<<<<<<< HEAD
 let postDiv = $("#post-div")
 let tagDiv = $("#tag-div")
 let contentDiv = $("#content-div")
@@ -157,24 +156,6 @@ $("#post-text").click(()=>{
             async:false
         })
     } 
-=======
-/*
- const getLatestPost = getData => {
-     $.ajax({
-         method:"GET",
-         url:"https://kodemia-12g-firestore-default-rtdb.firebaseio.com/articles/articles.json",
-        // data: JSON.stringify(postData),
-         success: response => {
-             console.log( response )
-         },
-         error: error => {
-             console.log( "hay un error ")
-             console.log( error )
-         },
-         async:false
-     })
- } 
->>>>>>> 58013cd477a5fc64b8a1962d5b05edb1fef71658
 
 const printPost = (postData) =>{
 
