@@ -2,8 +2,8 @@ const database = firebase.database()
 
 
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-var user = randomUsers[getRandomInt(randomUsers.length)]
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+//var user = randomUsers[getRandomInt(randomUsers.length)]
 
 database.ref("/articles").on("value",snapshot=>{
     const articles = snapshot.val()
