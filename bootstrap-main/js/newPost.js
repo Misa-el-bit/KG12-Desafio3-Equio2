@@ -116,6 +116,29 @@ $("#publish-post").click(() => {
 })
 
 
+let postDiv = $("#post-div")
+let tagDiv = $("#tag-div")
+let contentDiv = $("#content-div")
+
+
+$("#post-title").click(()=>{
+    postDiv.removeClass("d-none").addClass("d-flex")
+    tagDiv.removeClass("d-flex").addClass("d-none")
+    contentDiv.removeClass("d-flex").addClass("d-none")
+})
+
+$("#post-hash").click(()=>{
+    postDiv.removeClass("d-flex").addClass("d-none")
+    tagDiv.removeClass("d-none").addClass("d-flex")
+    contentDiv.removeClass("d-flex").addClass("d-none")
+})
+
+$("#post-text").click(()=>{
+    postDiv.removeClass("d-flex").addClass("d-none")
+    tagDiv.removeClass("d-flex").addClass("d-none")
+    contentDiv.removeClass("d-none").addClass("d-flex")
+})
+
    /*
     const getLatestPost = getData => {
         $.ajax({
