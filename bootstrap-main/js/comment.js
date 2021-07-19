@@ -106,5 +106,5 @@ xhttp.send(JSON.stringify(commentData));
 
 // Search
 
-getComments()
+//getComments()
 

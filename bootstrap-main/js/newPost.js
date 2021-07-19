@@ -100,7 +100,6 @@ $("#publish-post").click(() => {
     let title = $("#post-title").val()
     let tags = $("#post-hash").val()
     let social_image = ""
-    let description = $("#post-text").val()
     var text = $("#editor .ql-editor").html();
     let text_detail = text
     let tag_list = tags.split(" ")
@@ -108,7 +107,7 @@ $("#publish-post").click(() => {
     let published_at = date.toISOString()
     let user = getRandomUser(randomUsers)
     //agregar user al objeto, sacar codigo de ejemplo del homepage.
-    let postObject = { cover_image, title, tags, tag_list, social_image, description, text_detail, readable_date, published_at, user }
+    let postObject = { cover_image, title, tags, tag_list, social_image, text_detail, readable_date, published_at, user }
 
     uploadCoverImage(postObject)
 
@@ -141,21 +140,6 @@ $("#editor").click(()=>{
 })
 
    /*
-    const getLatestPost = getData => {
-        $.ajax({
-            method:"GET",
-            url:"https://kodemia-12g-firestore-default-rtdb.firebaseio.com/articles/articles.json",
-           // data: JSON.stringify(postData),
-            success: response => {
-                console.log( response )
-            },
-            error: error => {
-                console.log( "hay un error ")
-                console.log( error )
-            },
-            async:false
-        })
-    } 
 
 const printPost = (postData) =>{
 
