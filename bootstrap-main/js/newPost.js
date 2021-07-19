@@ -134,7 +134,7 @@ $("#post-hash").click(()=>{
     contentDiv.removeClass("d-flex").addClass("d-none")
 })
 
-$("#post-text").click(()=>{
+$("#editor").click(()=>{
     postDiv.removeClass("d-flex").addClass("d-none")
     tagDiv.removeClass("d-flex").addClass("d-none")
     contentDiv.removeClass("d-none").addClass("d-flex")
