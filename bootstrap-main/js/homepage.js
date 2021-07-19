@@ -10,19 +10,21 @@ database.ref("/articles").on("value",snapshot=>{
     console.log(articles)
     //featured-post-card
     var articleFeedContainer = $("#nav-feed")
+    let count = 0;
     for(articleId  in articles){
-        let template = createArticleTemplate(articles[articleId],articleId)
+        let template = createArticleTemplate(articles[articleId],articleId, count == 0)
         articleFeedContainer.prepend(template)
+        count++
     }
 })
 
 
 
-const createArticleTemplate = (article,aritcleId) => {
+const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
     let {comments_count=0, cover_image="", description="", published_at="" ,devToId = -1 || id ,tag_list=[] ,tags="" ,title="" ,user={} } = article
     let articleTemplate = `
     <div class="card br-post post-card featured-post-card mb-3">
-        <img src="${cover_image}" class="card-img-top" alt="...">
+        ${displayFeaturedImage ? `<img src="${cover_image}" class="card-img-top" alt="...">`:''}
         <div class="card-body">
             <div class="d-flex c-header">
                 <img src="${user.profile_image_90}" alt="" class="br-100">
