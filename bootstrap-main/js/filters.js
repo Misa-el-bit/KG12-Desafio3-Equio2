@@ -19,7 +19,8 @@ articlesRef.on('value', snapshot =>{
     
         for(art in filteredArticles){
             let { title, comments_count, readable_publish_date } = artsCollection[art]
-            
+            //<button type="button bg-primary" class="btn-new">New</button>
+            //${fechaReciente(artsCollection[art]) ? "Aqui Meted el boton" : ""}
             $(`.data-wrapper-${index}`).append(`
             
                 <li class="list-group-item">${title}
@@ -27,6 +28,7 @@ articlesRef.on('value', snapshot =>{
                         <p class="text-muted l-text">Comments: ${comments_count}</p>
                         <p class="text-muted l-text">${readable_publish_date}</p>
                     </div>
+                    <div></div>
                 </li>
             `)
         }

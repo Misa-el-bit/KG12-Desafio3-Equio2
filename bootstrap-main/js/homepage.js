@@ -6,11 +6,74 @@ const database = firebase.database()
 //var user = randomUsers[getRandomInt(randomUsers.length)]
 
 database.ref("/articles").on("value",snapshot=>{
-    const articles = snapshot.val()
-    console.log(articles)
+    const rawDataOfArticles = snapshot.val()
+    /*let articles = rawDataOfArticles.filter(article =>{
+        return article.comments_count > 0;
+    });*/
+    //console.log(articles)
     //featured-post-card
+
+
+    tabFilters = [
+        {
+            domComponent: $("#nav-feed"),
+            filterFunction: (article) =>{
+                return article.comments_count > 0;
+            }
+        },
+        {
+            domComponent: $("#nav-week"),
+            filterFunction: (article) =>{
+                let publishedDate = new Date(article.published_at)
+                let evaluation =  (publishedDate.getDate() - 7) < new Date()
+                return evaluation;
+            }
+        },
+        {
+            domComponent: $("#nav-month"),
+            filterFunction: (article) =>{
+                let publishedDate = new Date(article.published_at)
+                let evaluation =  (publishedDate.getDate() - 30) < new Date()
+                return evaluation;
+            }
+        },
+        {
+            domComponent: $("#nav-year"),
+            filterFunction: (article) =>{
+                let publishedDate = new Date(article.published_at)
+                let evaluation =  (publishedDate.getDate() - 365) < new Date()
+                return evaluation;
+            }
+        },
+        {
+            domComponent: $("#nav-infinity"),
+            filterFunction: (article) =>{
+                return true;
+            }
+        },
+        {
+            domComponent: $("#nav-latest"),
+            filterFunction: (article,index) =>{
+                return index < 10;
+            }
+        },
+        //nav-month
+    ]
+    for (filterIndex in tabFilters){
+        var tabContainertabFilters = tabFilters[filterIndex].domComponent
+        let count = 0;
+        var articles = rawDataOfArticles.filter( tabFilters[filterIndex].filterFunction )
+        for(articleId  in articles){
+            let template = createArticleTemplate(articles[articleId],articleId, count == 0)
+            tabContainertabFilters.prepend(template)
+            count++
+        }
+    }
+
+
     var articleFeedContainer = $("#nav-feed")
     let count = 0;
+
     for(articleId  in articles){
         let template = createArticleTemplate(articles[articleId],articleId, count == 0)
         articleFeedContainer.prepend(template)
