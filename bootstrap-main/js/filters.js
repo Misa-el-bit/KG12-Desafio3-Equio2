@@ -5,8 +5,6 @@ let articlesRef = database.ref("/articles")
 
 //Creamos un listener que este al pendiente de cualquier cambio en la referencia "articlesRef"
 articlesRef.on('value', snapshot =>{
-    console.log(snapshot);
-    console.log(snapshot.val());
     let artsCollection = snapshot.val();
     let tagsList = ['news','react','javascript']
     for(let index = 0; index < tagsList.length; index++){

@@ -6,13 +6,11 @@ const database = firebase.database()
 //var user = randomUsers[getRandomInt(randomUsers.length)]
 
 database.ref("/articles").on("value",snapshot=>{
-    const rawDataOfArticles = snapshot.val()
-    /*let articles = rawDataOfArticles.filter(article =>{
-        return article.comments_count > 0;
-    });*/
-    //console.log(articles)
-    //featured-post-card
-
+    const rawDataOfArticles = snapshot.val().sort(function(a,b){
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(a.published_at) - new Date(b.published_at);
+      });
 
     tabFilters = [
         {
@@ -25,7 +23,7 @@ database.ref("/articles").on("value",snapshot=>{
             domComponent: $("#nav-week"),
             filterFunction: (article) =>{
                 let publishedDate = new Date(article.published_at)
-                let evaluation =  (publishedDate.getDate() - 7) < new Date()
+                let evaluation =  (publishedDate.getDate() ) < (new Date() - 7)
                 return evaluation;
             }
         },
@@ -33,7 +31,7 @@ database.ref("/articles").on("value",snapshot=>{
             domComponent: $("#nav-month"),
             filterFunction: (article) =>{
                 let publishedDate = new Date(article.published_at)
-                let evaluation =  (publishedDate.getDate() - 30) < new Date()
+                let evaluation =  (publishedDate.getDate() ) < (new Date() - 30)
                 return evaluation;
             }
         },
@@ -41,7 +39,7 @@ database.ref("/articles").on("value",snapshot=>{
             domComponent: $("#nav-year"),
             filterFunction: (article) =>{
                 let publishedDate = new Date(article.published_at)
-                let evaluation =  (publishedDate.getDate() - 365) < new Date()
+                let evaluation =  (publishedDate.getDate() ) < (new Date() -365)
                 return evaluation;
             }
         },
@@ -93,7 +91,7 @@ const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
                 <img src="${user.profile_image_90}" alt="" class="br-100">
                 <div class="d-flex c-name">
                     <h6 class="nickname mb-0">${user.name}</h6>
-                    <p>Jun 12</p>
+                    <p>${new Date(published_at)}</p>
                 </div>
             </div>
             <div class="card-content pl-5 pt-2">
@@ -131,4 +129,3 @@ const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
     `
     return articleTemplate
 }
-console.log(database)
