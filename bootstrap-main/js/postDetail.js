@@ -37,7 +37,10 @@ const getArticleDetailById = (param_id) => {
             } else {
                 $(".card-format").append(response.text_detail)
             }
-
+            $(".card-header").append(`<img class="img-size" src="${response.user.profile_image}"
+            alt="${response.user.name}">
+            <h5 class="card-title">${response.user.name}</h5>`)
+            $(".card-description").append(response.description)
         },
         error: error => {
             console.log( "hay un error ")
