@@ -7,7 +7,7 @@ const database = firebase.database()
 
 database.ref("/articles").on("value",snapshot=>{
     const articles = snapshot.val()
-   // console.log(articles)
+    console.log(articles)
     //featured-post-card
     var articleFeedContainer = $("#nav-feed")
     for(articleId  in articles){
