@@ -901,7 +901,7 @@ span{
         }
     }
 }
-/*git
+
 // card main form, posting page
 .main-nav{
 
@@ -912,14 +912,17 @@ background-color: $light-gray;
 }
 }
 
-.card-body{
-    height: 900px;
+.new-post{
+
+background-color: white;
+.post-form{
+    height: 700px;
     textarea{
         background: transparent;
         
     }
 }
-
+}
 .buttons-close{
     width: 50%;
     justify-content: space-between;
@@ -953,27 +956,17 @@ background-color: $light-gray;
         background-color: darken($main-blue,5%);
         color: white;
     }
-<<<<<<< HEAD
 }
 
 .btn-save{
     height: 40px;
     width: 94px;
-    margin-left: .3rem;
-    margin-right: .3rem;
     white-space: nowrap;
     font-weight: 600;
     border: none;
     background-color: #b5bdc4;
-    color: black;
-    opacity: 0.8;
+    opacity: 0.7;
     &:hover{
         opacity: 1;
     }
 }
-
-
-
-=======
-}*/
->>>>>>> f47d9319d6a86b24c02e9f9923f9ca74fd7932c2

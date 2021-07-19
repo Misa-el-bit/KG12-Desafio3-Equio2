@@ -1006,24 +1006,23 @@ span {
   }
 }
 
-<<<<<<< HEAD
 .main-nav {
   background-color: #eef0f1;
 }
 
 .main-nav .post-nav {
   background-color: #eef0f1;
-=======
-/*git
-// card main form, posting page
-.post-nav{
-    background-color: $light-gray;
->>>>>>> f47d9319d6a86b24c02e9f9923f9ca74fd7932c2
 }
 
+.new-post {
+  background-color: white;
+}
 
-<<<<<<< HEAD
-.card-body textarea {
+.new-post .post-form {
+  height: 700px;
+}
+
+.new-post .post-form textarea {
   background: transparent;
 }
 
@@ -1065,26 +1064,14 @@ span {
 .btn-save {
   height: 40px;
   width: 94px;
-  margin-left: .3rem;
-  margin-right: .3rem;
   white-space: nowrap;
   font-weight: 600;
   border: none;
   background-color: #b5bdc4;
-  color: black;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .btn-save:hover {
   opacity: 1;
 }
-=======
-.card-body{
-    height: 900px;
-    textarea{
-        background: transparent;
-        font-weight: bolder;
-    }
-}*/
->>>>>>> f47d9319d6a86b24c02e9f9923f9ca74fd7932c2
 /*# sourceMappingURL=style.css.map */
