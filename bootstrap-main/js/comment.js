@@ -58,4 +58,5 @@ xhttp.onreadystatechange = function() {
 };
 xhttp.open("GET", "https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments.json", true);
 xhttp.send(JSON.stringify(commentData));
-}*/
+}
+*/
