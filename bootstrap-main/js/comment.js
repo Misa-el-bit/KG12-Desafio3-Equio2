@@ -60,3 +60,7 @@ xhttp.open("GET", "https://kodemia-12g-firestore-default-rtdb.firebaseio.com/com
 xhttp.send(JSON.stringify(commentData));
 }
 */
+
+// Search
+
+let searchParams = new URLSearchParams(window.location.search)
