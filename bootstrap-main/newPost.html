@@ -65,13 +65,17 @@
 	<div id="container"></div>
 	<section class="container-xl">
 	 <div class="row p-5">
-		<div class="card col-12 col-md-8 col-xl-8" >
-			<form class="card-body mr-5 d-flex flex-column align-items-start" id="postForm">
-				<button type="button" class="formPost btn btn-light " id="cover-image" >Add a cover image</button>
-				<input type="text" class="formPost w-100 border-0" id="post-title" placeholder="New post title here...">
-				<input type="text" class="formPost w-100 border-0" id="post-hash" placeholder="Add up to tags...">
-			    <button type="button" class="formPost btn btn-light " id="second-image" >Upload image</button>
-				<textarea name="" class="formPost w-100 h-100 border-0" id="post-text"   placeholder="Write your post content here..."></textarea>
+		<div class="new-post col-12 col-md-8 col-xl-8 " >
+			<form class="post-form mr-5 d-flex flex-column align-items-start" id="postForm">
+				<div class="form-group">
+				<input type="file" class="formPost btn btn-light mt-2 " id="cover-image" >
+			    </div>
+				<input type="text" class="formPost w-100 border-0 m-2" id="post-title" placeholder="New post title here...">
+				<input type="text" class="formPost w-100 border-0 m-2" id="post-hash" placeholder="Add up to tags...">
+				<div class="file">	
+					<input type="file" class="formPost btn btn-light m-2" id="second-image" placeholder="Add up to tags...">
+				  </div>
+				<textarea name="" class="formPost w-100 h-100 border-0 m-2" id="post-text"   placeholder="Write your post content here..."></textarea>
 				<div class="w-100">
 				<div id="editor">
 					<p>Hello World!</p>
@@ -94,7 +98,7 @@
 	</section>
 
 	<div class="col-12 ml-5 ">
-		<a href="index.html"><button type="button" class="btn btn-publish" id="publish-post">Publish</button></a>
+		<a href="#"><button type="button" class="btn btn-publish" id="publish-post">Publish</button></a>
 		<button type="button" class="btn btn-save">Save draft</button>
 		<svg width="24" class="crayons-icon" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="75abcb76478519ca4eb9"><title id="75abcb76478519ca4eb9">Post options</title><path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"></path></svg>
 		<button type="button" class="btn btn-light">Revert new changes</button>

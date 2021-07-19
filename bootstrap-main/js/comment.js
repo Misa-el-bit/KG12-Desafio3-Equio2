@@ -7,6 +7,7 @@
 -post al que pertenece
 */
 
+
 document.getElementById("create-comment").addEventListener("click",()=>{
     let date = new Date()
     let dd = date.getDate() < 10 ? `0${date.getDate()}`: date.getDate
@@ -32,6 +33,20 @@ xhttp.send(JSON.stringify(commentData));
 }
 
 
+function getRandomName(){
+    const names =[
+        "Ángel Reséndiz",
+        "Héctor Alcaráz",
+        "Xóchitl Moreno",
+        "Alfredo Pizaña",
+        "Wendy Ortega",
+    ]
+    const randomIndex = Math.floor(Math.random() * names.length);
+    return names[randomIndex]
+    
+}
+
+
 /*const getComment = (commentData) =>{
     let response;
     let xhttp = new XMLHttpRequest();
@@ -44,4 +59,4 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments.json", true);
 xhttp.send(JSON.stringify(commentData));
 }
-*7
+*/
