@@ -65,7 +65,7 @@
 	<div id="container"></div>
 	<section class="container-xl">
 	 <div class="row p-5">
-		<div class="new-post col-12 col-md-8 col-xl-8 " >
+		<div class="new-post col-12 col-md-8 col-xl-8 flex" >
 			<form class="post-form mr-5 d-flex flex-column align-items-start" id="postForm">
 				<div class="form-group">
 				<input type="file" class="formPost btn btn-light mt-2 " id="cover-image" >
@@ -85,13 +85,26 @@
 				</div>
 			</form>
 		  </div>
-		  <aside class="col-12 col-md-4 col-xl-4 d-flex">
-			  <div class="d-flex flex-column justify-content-center">
-			<h5>Editor Basics</h5>
-			<p>Use Markdown to write and format posts.
-				Commonly used syntax
-				You can use Liquid tags to add rich content such as Tweets, YouTube videos, etc.
-				In addition to images for the post's content, you can also drag and drop a cover image</p>
+		  <aside class="col-12 col-md-4 col-xl-4 d-flex ">
+			<div class="d-none flex-column justify-content-center" id="post-div">
+			   <h5>Writing a Great Post Title</h5>
+			   <p>Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
+				Use keywords where appropriate to help ensure people can find your post by search.</p>
+			</div>
+			<div class="d-none flex-column justify-content-center" id="tag-div">
+				<h5>Tagging Guidelines</h5>
+				<p>Tags help people find your post.
+					Think of tags as the topics or categories that best describe your post.
+					Add up to four comma-separated tags per post. Combine tags to reach the appropriate subcommunities.
+					Use existing tags whenever possible.
+					Some tags, such as “help” or “healthydebate”, have special posting guidelines.</p>
+			</div>
+			<div class="d-none flex-column justify-content-center" id="content-div">
+				<h5>Editor Basics</h5>
+				<p>Use Markdown to write and format posts.
+						Commonly used syntax
+						You can use Liquid tags to add rich content such as Tweets, YouTube videos, etc.
+						In addition to images for the post's content, you can also drag and drop a cover image</p>
 			</div>
 		  </aside>
 	</div>

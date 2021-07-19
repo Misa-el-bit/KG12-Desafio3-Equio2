@@ -117,6 +117,47 @@ $("#publish-post").click(() => {
 })
 
 
+<<<<<<< HEAD
+let postDiv = $("#post-div")
+let tagDiv = $("#tag-div")
+let contentDiv = $("#content-div")
+
+
+$("#post-title").click(()=>{
+    postDiv.removeClass("d-none").addClass("d-flex")
+    tagDiv.removeClass("d-flex").addClass("d-none")
+    contentDiv.removeClass("d-flex").addClass("d-none")
+})
+
+$("#post-hash").click(()=>{
+    postDiv.removeClass("d-flex").addClass("d-none")
+    tagDiv.removeClass("d-none").addClass("d-flex")
+    contentDiv.removeClass("d-flex").addClass("d-none")
+})
+
+$("#post-text").click(()=>{
+    postDiv.removeClass("d-flex").addClass("d-none")
+    tagDiv.removeClass("d-flex").addClass("d-none")
+    contentDiv.removeClass("d-none").addClass("d-flex")
+})
+
+   /*
+    const getLatestPost = getData => {
+        $.ajax({
+            method:"GET",
+            url:"https://kodemia-12g-firestore-default-rtdb.firebaseio.com/articles/articles.json",
+           // data: JSON.stringify(postData),
+            success: response => {
+                console.log( response )
+            },
+            error: error => {
+                console.log( "hay un error ")
+                console.log( error )
+            },
+            async:false
+        })
+    } 
+=======
 /*
  const getLatestPost = getData => {
      $.ajax({
@@ -133,6 +174,7 @@ $("#publish-post").click(() => {
          async:false
      })
  } 
+>>>>>>> 58013cd477a5fc64b8a1962d5b05edb1fef71658
 
 const printPost = (postData) =>{
 
