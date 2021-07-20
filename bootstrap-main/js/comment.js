@@ -29,7 +29,7 @@ const saveComment = (commentData) =>{
         if (this.readyState == 4 && this.status == 200) {
         response = xhttp.responseText;
         $("#comment").val("")
-        printComments()
+        //printComments()
         }
 };
 xhttp.open("POST", "https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments.json", true);
@@ -92,7 +92,7 @@ const getAllComments = () =>{
     let result;
     $.ajax({
         method:"GET",
-        url:`https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments?articleId=${articleId}.json`,
+        url:`https://kodemia-12g-firestore-default-rtdb.firebaseio.com/comments?articleId=${articleId}.json`,
         success: response =>{
             console.log(response)
             result = response
@@ -113,11 +113,11 @@ const getAllComments = () =>{
     return commentInfo
 }
 */
-
+/*
 const printComments = () =>{
     let commentsToPrint = getAllComments()
-    $("post-card").empty()
-    for(comment in allComments){
+    $(".comment-wrapper").empty()
+    for(coment in commentsToPrint){
         let {comment,user, commentDay} = commentsToPrint[coment]
 
         let commentHtml = `<div class="mt-3 card br-post post-card">
@@ -150,7 +150,7 @@ const printComments = () =>{
     }
     console.log(commentsToPrint)
 }
-
+*/
 //printComments() //mover a savecomment?
 
 
