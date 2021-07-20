@@ -26,7 +26,7 @@ const getArticleDetailById = (param_id) => {
             console.log( response.id )
             $(".cover-image").append(`<img src="${response.cover_image}" class="card-img-top"
             alt="${response.title}">`)
-            $(".card-body").append(`<h1 class="card-text font-weight-bold">${response.title}</h1>`)
+            $("#card-main").append(`<h1 class="card-text font-weight-bold">${response.title}</h1>`)
             if (response.tag_list !==  undefined){
                 response.tag_list.forEach( (item, index) =>{
                     $(".card-tags").append(`<button class="btn-card-${index + 2} mr-2 text" type="button">#${item}</button>`)
