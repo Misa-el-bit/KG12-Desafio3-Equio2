@@ -1,7 +1,5 @@
 const database = firebase.database()
 
-
-
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 //var user = randomUsers[getRandomInt(randomUsers.length)]
 
@@ -9,23 +7,21 @@ database.ref("/articles").on("value",snapshot=>{
     const rawDataOfArticles = snapshot.val().sort(function(a,b){
         // Turn your strings into dates, and then subtract them
         // to get a value that is either negative, positive, or zero.
-        //return new Date(a.published_at).getTime() > new Date(b.published_at).getTime() ;
-        new Date(a.published_at).getTime() - new Date(b.published_at).getTime() 
+        return new Date(a.published_at) - new Date(b.published_at);
       });
 
     tabFilters = [
         {
-            domComponent: $("#nav-feed"),
+            domComponent: $("#nav-mostrelevant"),
             filterFunction: (article) =>{
                 return article.comments_count > 0;
             }
         },
         {
-            domComponent: $("#nav-week"),
+            domComponent: $("#nav-newest"),
             filterFunction: (article) =>{
                 let publishedDate = new Date(article.published_at)
-                let currentDate = new Date(new Date() - 7);
-                let evaluation =  publishedDate.getTime() < currentDate.getTime()
+                let evaluation =  (publishedDate.getDate() ) < (new Date() - 7)
                 return evaluation;
             }
         },
@@ -33,8 +29,7 @@ database.ref("/articles").on("value",snapshot=>{
             domComponent: $("#nav-month"),
             filterFunction: (article) =>{
                 let publishedDate = new Date(article.published_at)
-                let currentDate = new Date(new Date() - 30);
-                let evaluation =  publishedDate.getTime() < currentDate.getTime()
+                let evaluation =  (publishedDate.getDate() ) < (new Date() - 30)
                 return evaluation;
             }
         },
@@ -42,8 +37,7 @@ database.ref("/articles").on("value",snapshot=>{
             domComponent: $("#nav-year"),
             filterFunction: (article) =>{
                 let publishedDate = new Date(article.published_at)
-                let currentDate = new Date(new Date() - 365);
-                let evaluation =  publishedDate.getTime() < currentDate.getTime()
+                let evaluation =  (publishedDate.getDate() ) < (new Date() -365)
                 return evaluation;
             }
         },
@@ -76,7 +70,7 @@ database.ref("/articles").on("value",snapshot=>{
 
 
 const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
-    let {comments_count=0, cover_image="", description="", published_at="" ,devToId = article['id'] ,tag_list=[] ,tags="" ,title="" ,user={} } = article
+    let {comments_count=0, cover_image="", description="", published_at="" ,devToId = article.id ,tag_list=[] ,tags="" ,title="" ,user={} } = article
     let articleTemplate = `
     <div class="card br-post post-card featured-post-card mb-3">
         ${displayFeaturedImage ? `<img src="${cover_image}" class="card-img-top" alt="...">`:''}
