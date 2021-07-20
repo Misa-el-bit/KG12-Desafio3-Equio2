@@ -60,7 +60,7 @@ const getPostDetailsFromDevTo = devToId => {
        // data: JSON.stringify(postData),
         success: response => {
            // console.log( response.cover_image )
-            $(".card-format").append(response.body_html)
+            $(".card-format").prepend(response.body_html)
             
         },
         error: error => {
