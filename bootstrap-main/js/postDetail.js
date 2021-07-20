@@ -22,8 +22,8 @@ const getArticleDetailById = (param_id) => {
         url:`https://kodemia-12g-firestore-default-rtdb.firebaseio.com/articles/${param_id}.json`,
        // data: JSON.stringify(postData),
         success: response => {
-             console.log( response.cover_image)
-            console.log( response.id )
+             console.log( response)
+            console.log( {param_id})
             $(".cover-image").append(`<img src="${response.cover_image}" class="card-img-top"
             alt="${response.title}">`)
             $(".card-body").append(`<h1 class="card-text font-weight-bold">${response.title}</h1>`)

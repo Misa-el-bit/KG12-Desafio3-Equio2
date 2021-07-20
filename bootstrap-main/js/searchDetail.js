@@ -3,62 +3,61 @@ const database = firebase.database()
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 //var user = randomUsers[getRandomInt(randomUsers.length)]
 
+let searchParams = new URLSearchParams(window.location.search)
+//Obtiene el valor pet key de la url.
+const keyword = searchParams.get('keyword').toLowerCase()
+
+
 database.ref("/articles").on("value",snapshot=>{
-    const rawDataOfArticles = snapshot.val().sort(function(a,b){
-        // Turn your strings into dates, and then subtract them
-        // to get a value that is either negative, positive, or zero.
+    
+    const rawDataOfArticles = snapshot.val().filter((article)=>{
+        let title = article.title.toLowerCase()
+        console.log(title,keyword)
+        return title.includes(keyword)
+        console
+    })/*.sort(function(a,b){
         return new Date(a.published_at) - new Date(b.published_at);
-      });
+      });*/
+
 
     tabFilters = [
         {
             domComponent: $("#nav-mostrelevant"),
             filterFunction: (article) =>{
-                return article.comments_count > 0;
+                //return article > 0;
+                return true;
             }
         },
         {
             domComponent: $("#nav-newest"),
             filterFunction: (article) =>{
-                let publishedDate = new Date(article.published_at)
+                /*let publishedDate = new Date(article.published_at)
                 let evaluation =  (publishedDate.getDate() ) < (new Date() - 7)
-                return evaluation;
+                return evaluation;*/
+                return true;
             }
         },
         {
             domComponent: $("#nav-month"),
             filterFunction: (article) =>{
-                let publishedDate = new Date(article.published_at)
+                /*let publishedDate = new Date(article.published_at)
                 let evaluation =  (publishedDate.getDate() ) < (new Date() - 30)
-                return evaluation;
-            }
-        },
-        {
-            domComponent: $("#nav-year"),
-            filterFunction: (article) =>{
-                let publishedDate = new Date(article.published_at)
-                let evaluation =  (publishedDate.getDate() ) < (new Date() -365)
-                return evaluation;
-            }
-        },
-        {
-            domComponent: $("#nav-infinity"),
-            filterFunction: (article) =>{
+                return evaluation;*/
                 return true;
             }
-        },
-        {
-            domComponent: $("#nav-latest"),
-            filterFunction: (article,index) =>{
-                return index < 10;
-            }
-        },
+        }
         //nav-month
     ]
     for (filterIndex in tabFilters){
+        
         var tabContainertabFilters = tabFilters[filterIndex].domComponent
+        tabContainertabFilters.prepend("")
         let count = 0;
         var articles = rawDataOfArticles.filter( tabFilters[filterIndex].filterFunction )
+        if(articles.length==0){
+            tabContainertabFilters.prepend("<h2>No results Found</h2>")
+            continue;
+        }
         for(articleId  in articles){
             let template = createArticleTemplate(articles[articleId],articleId, count == 0)
             tabContainertabFilters.prepend(template)

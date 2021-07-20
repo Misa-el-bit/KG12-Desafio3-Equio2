@@ -6,7 +6,11 @@ const database = firebase.database()
 //var user = randomUsers[getRandomInt(randomUsers.length)]
 
 database.ref("/articles").on("value",snapshot=>{
-    const rawDataOfArticles = snapshot.val().sort(function(a,b){
+    const rawDataOfArticles = snapshot.val()
+    
+    const sortedArticles = rawDataOfArticles.map((value,index)=>{
+        return {tempArticleIndex:index,...value};
+    }).sort(function(a,b){
         // Turn your strings into dates, and then subtract them
         // to get a value that is either negative, positive, or zero.
         //return new Date(a.published_at).getTime() > new Date(b.published_at).getTime() ;
@@ -64,9 +68,9 @@ database.ref("/articles").on("value",snapshot=>{
     for (filterIndex in tabFilters){
         var tabContainertabFilters = tabFilters[filterIndex].domComponent
         let count = 0;
-        var articles = rawDataOfArticles.filter( tabFilters[filterIndex].filterFunction )
+        var articles = sortedArticles.filter( tabFilters[filterIndex].filterFunction )
         for(articleId  in articles){
-            let template = createArticleTemplate(articles[articleId],articleId, count == 0)
+            let template = createArticleTemplate(articles[articleId], count == 0)
             tabContainertabFilters.prepend(template)
             count++
         }
@@ -75,8 +79,8 @@ database.ref("/articles").on("value",snapshot=>{
 
 
 
-const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
-    let {comments_count=0, cover_image="", description="", published_at="" ,devToId = article['id'] ,tag_list=[] ,tags="" ,title="" ,user={} } = article
+const createArticleTemplate = (article,displayFeaturedImage) => {
+    let {comments_count=0, cover_image="", description="", published_at="" ,devToId = article['id'] ,tag_list=[] ,tags="" ,title="" ,user={}, tempArticleIndex } = article
     let articleTemplate = `
     <div class="card br-post post-card featured-post-card mb-3">
         ${displayFeaturedImage ? `<img src="${cover_image}" class="card-img-top" alt="...">`:''}
@@ -89,7 +93,7 @@ const createArticleTemplate = (article,aritcleId,displayFeaturedImage) => {
                 </div>
             </div>
             <div class="card-content pl-5 pt-2">
-                <a href="postDetail.html?articleId=${aritcleId}&devToId=${devToId}" class="post-list">
+                <a href="postDetail.html?articleId=${tempArticleIndex}&devToId=${devToId}" class="post-list">
                     <h4 class="card-title">${title}</h4>
                 </a>
                 <div class="d-flex h-order">
