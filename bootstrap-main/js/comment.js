@@ -27,9 +27,9 @@ const saveComment = (commentData) =>{
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        
         response = xhttp.responseText;
         $("#comment").val("")
+        printComments()
         }
 };
 xhttp.open("POST", "https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments.json", true);
@@ -87,9 +87,76 @@ function getRandomName(){
     
 }
 
+//
+const getAllComments = () =>{
+    let result;
+    $.ajax({
+        method:"GET",
+        url:`https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments?articleId=${articleId}.json`,
+        success: response =>{
+            console.log(response)
+            result = response
+        },
+        console:error =>{
+            console.log("Hay un error")
+            console.log(error)
+        },
+        async:false
+    })
+    return result
+}
+
+/*const getCommentById = commentId =>{
+    let allComments =getAllComments()
+    let comment = Object.keys(allComments).filter(comment => comment === commentId)
+    let commentInfo = allComments[comment]
+    return commentInfo
+}
+*/
+
+const printComments = () =>{
+    let commentsToPrint = getAllComments()
+    $("post-card").empty()
+    for(comment in allComments){
+        let {comment,user, commentDay} = commentsToPrint[coment]
+
+        let commentHtml = `<div class="mt-3 card br-post post-card">
+        <img src="" class="rounded-circle mr-1" alt="" />
+        <div id="comment-wrapper" class="">
+          <div class="p-2 shadow-full_01">
+            <span class="d-flex justify-content-between align-items-center">
+              <span>
+                <span>${user.name}</span>
+                <span> •${commentDay}</span>
+              </span>
+              <span class="dropdown">
+                <button class="btn dropdown-toggle font-weight-bold lh--" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</button>
+                <span class="dropdown-menu dropdown-menu-right devto-style" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Copy Link</a>
+                  <a class="dropdown-item" href="#">Report Abuse</a>
+                </span>
+              </span>
+            </span>
+            <div id="comment-boby">
+            <p>
+            ${comment}
+            </p>
+            </div>
+        </div>
+        </div>
+      </div>
+      `  
+      $(".comments-wrapper").append(commentHtml)
+    }
+    console.log(commentsToPrint)
+}
+
+//printComments() //mover a savecomment?
 
 
-/*const getComments = (commentData) =>{
+
+/*
+const getComments = (commentData) =>{
     let response;
     let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -103,7 +170,6 @@ xhttp.open("GET", `https://kodemia-12g-firestore-default-rtdb.firebaseio.com/com
 xhttp.send(JSON.stringify(commentData));
 }
 */
-
 // Search
 
 //getComments()
