@@ -29,7 +29,7 @@ const saveComment = (commentData) =>{
         if (this.readyState == 4 && this.status == 200) {
         response = xhttp.responseText;
         $("#comment").val("")
-        printComments()
+        //printComments()
         }
 };
 xhttp.open("POST", "https://kodemia-12g-firestore-default-rtdb.firebaseio.com/coments.json", true);
@@ -113,7 +113,7 @@ const getAllComments = () =>{
     return commentInfo
 }
 */
-
+/*
 const printComments = () =>{
     let commentsToPrint = getAllComments()
     $("post-card").empty()
@@ -150,7 +150,7 @@ const printComments = () =>{
     }
     console.log(commentsToPrint)
 }
-
+*/
 //printComments() //mover a savecomment?
 
 
