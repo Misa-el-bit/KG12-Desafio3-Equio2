@@ -106,13 +106,13 @@ const getAllComments = () =>{
     return result
 }
 
-/*const getCommentById = commentId =>{
+const getCommentById = commentId =>{
     let allComments =getAllComments()
     let comment = Object.keys(allComments).filter(comment => comment === commentId)
     let commentInfo = allComments[comment]
     return commentInfo
 }
-*/
+
 /*
 const printComments = () =>{
     let commentsToPrint = getAllComments()
