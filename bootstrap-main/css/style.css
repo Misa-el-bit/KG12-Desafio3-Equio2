@@ -1028,6 +1028,34 @@ span {
   min-height: 700px;
 }
 
+.new-post .post-form .form-group {
+  margin-bottom: 0px;
+}
+
+.new-post .post-form .form-group label {
+  border: 1px solid #9e9a9a;
+  border-radius: 7px;
+  height: 40px;
+  width: 160px;
+  font-weight: 600;
+  background-color: white;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.new-post .post-form .form-group label:hover {
+  opacity: 1;
+  background-color: #f0f0f0;
+}
+
+.new-post .post-form .file-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 510px;
+  background-color: #f0f0f0;
+}
+
 .new-post .post-form #post-title {
   font-size: 3rem;
   font-weight: bold;

@@ -70,19 +70,23 @@
 			<div class="new-post col-12 col-md-8 col-xl-8 flex">
 				<form class="post-form d-flex flex-column align-items-start" id="postForm">
 					<div class="form-group">
-						<input type="file" class="formPost btn btn-light mt-2 " id="cover-image">
+						<label for="cover-image"><h6 class="mt-2">Add a cover image</h6> </label>
+						<input type="file" class="formPost btn btn-light " id="cover-image" style="display: none;">
 					</div>
 					<div class="form-group">
 					<input type="text" class="formPost w-100 border-0 m-2" id="post-title"
 						placeholder="New post title here...">
 					</div>
-					<div class="form-group">
+					<div class="form-group mb-2">
 					<input type="text" class="formPost w-100 border-0 m-2" id="post-hash"
 						placeholder="Add up to tags...">
 					</div>
-					<div class="form-group file">
-						<input type="file" class="formPost btn btn-light m-2" id="second-image"
-							placeholder="Add up to tags...">
+					<div class="file-pic w-100 bg-light mb-2">
+						<button class="btn btn-light">
+						<svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="a17qec5pfhrwzk9w4kg0tp62v27qqu9t"><title id="a17qec5pfhrwzk9w4kg0tp62v27qqu9t">Upload image</title><path d="M20 5H4v14l9.292-9.294a1 1 0 011.414 0L20 15.01V5zM2 3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V3.993zM8 11a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+						<label for="second-image">Upload image</label>
+						<input type="file" class="formPost btn btn-light m-2" id="second-image" style="display: none;">
+					    </button>
 					</div>
 					<div class="form-group post-detail-editor">
 					<div class="w-100">
@@ -93,7 +97,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="">
+					<div class="mt-5">
 						<a href="#"><button type="button" class="btn btn-publish" id="publish-post">Publish</button></a>
 						<button type="button" class="btn btn-save">Save draft</button>
 						<svg width="24" class="crayons-icon" height="24" viewBox="0 0 24 24"
